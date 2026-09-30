@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #fafafa;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0 0 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+input,
+textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #333;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#submitButton {
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+#cancelButton {
+    background-color: #ccc;
+    color: #333;
+    width: 100%;
+}
+
+.posts-title {
+    font-size: 28px;
+    margin: 0 0 20px;
+}
+
+#posts {
+    margin-top: 20px;
+}
+
+#posts > div {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
+}
+
+#posts > div:hover {
+    transform: translateY(-3px);
+}
+
+#posts h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+#posts p {
+    margin: 0 0 10px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    color: #444;
+}
+
+#posts small {
+    display: block;
+    margin-bottom: 15px;
+    color: #888;
+    font-size: 13px;
+}
+
+#posts button {
+    margin-right: 8px;
+}
+
+#posts button:first-of-type {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#posts button:nth-of-type(2) {
+    background-color: #333;
+    color: white;
+}
+
+#posts hr {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .posts-title {
+        font-size: 24px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    #posts > div {
+        padding: 15px;
+    }
+
+    #posts h2 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #posts button {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+}

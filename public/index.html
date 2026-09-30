@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>My CRUD App</h1>
+
+    <h2>Login</h2>
+
+    <form id="loginForm">
+      <input
+        type="text"
+        id="loginUsername"
+        placeholder="Username"
+        required
+        autocomplete="username"
+      />
+
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Password"
+        required
+        autocomplete="current-password"
+      />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <h2>Register</h2>
+
+    <form id="registerForm">
+      <input
+        type="text"
+        id="registerUsername"
+        placeholder="Username"
+        required
+      />
+
+      <input
+        type="password"
+        id="registerPassword"
+        placeholder="Password"
+        required
+      />
+
+      <button type="submit">Register</button>
+    </form>
+
+    <button type="button" id="logoutButton">Logout</button>
+
+    <form id="postForm">
+      <input type="text" id="title" placeholder="Post title" required />
+
+      <textarea id="content" placeholder="Post content" required></textarea>
+
+      <button type="submit" id="submitButton">Add Post</button>
+
+      <button type="button" id="cancelButton" style="display: none">
+        Cancel
+      </button>
+    </form>
+
+    <h2 class="posts-title">Posts</h2>
+
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Search posts..." />
+      <button type="submit">Search</button>
+      <button type="button" id="clearSearchButton">Clear</button>
+    </form>
+
+    <div id="posts"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
