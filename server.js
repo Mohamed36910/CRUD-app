@@ -219,7 +219,7 @@ app.post("/api/login", async (req, res) => {
 
         res.cookie("refreshToken", refreshToken, {
           httpOnly: true,
-          secure: false,
+          secure: true,
           sameSite: "lax",
           maxAge: 7 * 24 * 60 * 60 * 1000,
         });
@@ -374,7 +374,7 @@ app.post("/api/refresh", (req, res) => {
 
                 res.cookie("refreshToken", newRefreshToken, {
                   httpOnly: true,
-                  secure: false,
+                  secure: true,
                   sameSite: "lax",
                   maxAge: 7 * 24 * 60 * 60 * 1000,
                 });
@@ -422,7 +422,7 @@ app.post("/api/logout", (req, res) => {
 
       res.clearCookie("refreshToken", {
         httpOnly: true,
-        secure: false,
+        secure: true,
         sameSite: "lax",
       });
 
