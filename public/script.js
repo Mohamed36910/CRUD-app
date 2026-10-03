@@ -7,6 +7,8 @@ const postsContainer = document.getElementById("posts");
 const loginForm = document.getElementById("loginForm");
 const logoutButton = document.getElementById("logoutButton");
 const registerForm = document.getElementById("registerForm");
+const loginSection = document.getElementById("loginSection");
+const registerSection = document.getElementById("registerSection");
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
 const clearSearchButton = document.getElementById("clearSearchButton");
@@ -18,11 +20,13 @@ function updateAuthUI() {
   const token = localStorage.getItem("token");
 
   if (token) {
-    loginForm.style.display = "none";
+    loginSection.style.display = "none";
+    registerSection.style.display = "none";
     logoutButton.style.display = "block";
     postForm.style.display = "block";
   } else {
-    loginForm.style.display = "block";
+    loginSection.style.display = "block";
+    registerSection.style.display = "block";
     logoutButton.style.display = "none";
     postForm.style.display = "none";
   }
@@ -332,7 +336,7 @@ getPosts();
 async function searchPosts(search) {
   try {
     const response = await fetch(
-      `/api/posts/search?search=${encodeURIComponent(search)}`
+      `/api/posts/search?search=${encodeURIComponent(search)}`,
     );
 
     const searchResults = await response.json();
@@ -507,4 +511,3 @@ postForm.addEventListener("submit", async (event) => {
 });
 
 //ts ts ts
-

@@ -11,20 +11,21 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
 });
 
-db.connect((err) => {
+db.getConnection((err, connection) => {
   if (err) {
     console.log("Database connection failed:", err);
     return;
   }
 
   console.log("Connected to MySQL");
+  connection.release();
 });
 
 function authenticateToken(req, res, next) {
